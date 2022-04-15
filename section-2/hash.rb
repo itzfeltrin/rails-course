@@ -14,3 +14,8 @@ puts dict.values.to_s
 
 # loop through keys
 dict.each { |key, value| puts "#{key}: #{value}" }
+
+number_dict = {}
+(0..100).to_a.each { |value| number_dict.store(value.to_s, value) }
+puts number_dict.to_s
+puts number_dict.select { |_, value| value.odd? }
