@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+    --border-color: lightgrey;
+}
+
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    border-spacing: 0;
+    border: 1px solid var(--border-color);
+    border-bottom-width: 0;
+    margin: 1rem;
+}
+
+td {
+    border-bottom: 0.25px solid var(--border-color);
+}
+
+th, td {
+    /*border: 0.1rem solid black;*/
+    padding: 0.5rem;
+}
