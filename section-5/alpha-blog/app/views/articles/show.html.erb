@@ -1,0 +1,10 @@
+<h1>Showing article details</h1>
+
+<p><strong>Name: </strong><%= @article.title %></p>
+<p><strong>Description: </strong><%= @article.description %></p>
+
+<%= link_to 'Edit', edit_article_path(@article) %>
+<span>|</span>
+<%= link_to 'Delete', article_path(@article), data: { "turbo_method": :delete, "turbo-confirm": "Are you sure?" } %>
+<span>|</span>
+<%= link_to 'Return to articles listing', articles_path %>
