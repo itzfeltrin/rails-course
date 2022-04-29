@@ -1,10 +1,26 @@
-<h1>Showing article details</h1>
+<div id="page-content">
+  <h2 class="text-center mt-4 font-weight-bold"><%= @article.title %></h2>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow bg-white rounded">
+          <div class="card-header font-italic">
+            by Pedro Feltrin
+          </div>
+          <div class="card-body">
+            <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
+            <%= link_to "Remove", article_path(@article), class: "btn btn-outline-danger", data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?" } %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= "Created #{time_ago_in_words(@article.created_at)} ago, Updated #{time_ago_in_words(@article.updated_at)} ago" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p><strong>Name: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %>
-<span>|</span>
-<%= link_to 'Delete', article_path(@article), data: { "turbo_method": :delete, "turbo-confirm": "Are you sure?" } %>
-<span>|</span>
-<%= link_to 'Return to articles listing', articles_path %>
+  <p>
+    <%= link_to 'Create new article', new_article_path %>
+  </p>
+</div>
