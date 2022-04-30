@@ -18,4 +18,6 @@ class User < ApplicationRecord
             email: true,
             length: { maximum: 105 },
             uniqueness: { case_sensitive: false }
+
+  before_save { self.email = email.downcase }
 end
