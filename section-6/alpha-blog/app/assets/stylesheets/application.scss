@@ -37,3 +37,52 @@ html, body {
 #sticky-footer {
   flex-shrink: 0;
 }
+
+.flickr_pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default;
+
+  a, span, em {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .disabled {
+    color: #aaaaaa;
+    border: 2px solid #dddddd;
+    border-radius: 0.25rem;
+  }
+
+  a, .current {
+    cursor: pointer;
+    border: 2px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 0.25rem;
+
+    &:hover, &:focus, &.current {
+      background: #dddddd;
+      color: white;
+    }
+  }
+
+  .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em;
+  }
+
+  .previous_page, .next_page {
+    border-width: 2px;
+  }
+
+  .previous_page {
+    margin-right: 1em;
+  }
+
+  .next_page {
+    margin-left: 1em;
+  }
+}
+
+
